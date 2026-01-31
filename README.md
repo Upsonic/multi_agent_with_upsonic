@@ -1,6 +1,6 @@
 # multi-agent-with-upsonic
 
-Demonstrates Upsonic team modes: sequential, coordinate, route.
+Demonstrates Upsonic agents and team modes: manual calls, sequential, coordinate, route.
 
 ## REQUIREMENTS
 
@@ -19,18 +19,19 @@ Demonstrates Upsonic team modes: sequential, coordinate, route.
 
 ## USAGE
 
-    $ python src/code_example_1/main.py    # Agent basics (OCR)
-    $ python src/code_example_2/main.py    # Sequential team
-    $ python src/code_example_3/main.py    # Coordinate team
-    $ python src/code_example_4/main.py    # Route team
+    # Run with uv (project uses uv for dependency management)
+    $ uv run src/code_example_1/main.py    # Manual agent calls (no team)
+    $ uv run src/code_example_2/main.py    # Sequential team
+    $ uv run src/code_example_3/main.py    # Coordinate team
+    $ uv run src/code_example_4/main.py    # Route team
 
 ## TESTING
 
     # Run individual tests
-    $ python tests/test_code_example_1.py
-    $ python tests/test_code_example_2.py
-    $ python tests/test_code_example_3.py
-    $ python tests/test_code_example_4.py
+    $ uv run tests/test_code_example_1.py
+    $ uv run tests/test_code_example_2.py
+    $ uv run tests/test_code_example_3.py
+    $ uv run tests/test_code_example_4.py
 
     # All tests follow TDD approach
     # Test first, code second, validate
@@ -111,10 +112,10 @@ Demonstrates Upsonic team modes: sequential, coordinate, route.
 ## STRUCTURE
 
     src/
-        code_example_1/     OCR and text extraction (agent basics)
-        code_example_2/     Blog post creation (sequential)
-        code_example_3/     Product launch campaign (coordinate)
-        code_example_4/     Customer support system (route)
+        code_example_1/     Manual agent calls (no team mode)
+        code_example_2/     Blog post creation (sequential team)
+        code_example_3/     Product launch campaign (coordinate team)
+        code_example_4/     Customer support system (route team)
         
     tests/
         test_code_example_1.py
@@ -138,11 +139,11 @@ Demonstrates Upsonic team modes: sequential, coordinate, route.
 
 ## EXAMPLES IN DETAIL
 
-### Example 1: OCR and Text Extraction
-    Demonstrates: Agent-task workflow
+### Example 1: OCR and Text Extraction (Manual Agent Calls)
+    Demonstrates: Manual agent calls without team mode
     Agents: OCR Agent, Extractor Agent
     Flow: Image → OCR → Text extraction
-    No team mode (individual agents)
+    Note: Direct agent.do(task) calls, no Team coordination
 
 ### Example 2: Blog Post Creation (Sequential)
     Demonstrates: Sequential team mode
