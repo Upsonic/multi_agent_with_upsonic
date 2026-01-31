@@ -1,4 +1,4 @@
-# multi-agent-with-upsonic
+# Multi Agent With Upsonic
 
 Demonstrates Upsonic agents and team modes: manual calls, sequential, coordinate, route.
 
