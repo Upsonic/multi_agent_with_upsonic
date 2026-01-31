@@ -4,9 +4,8 @@ Code Example 1: OCR and Text Extraction Workflow
 This example demonstrates:
 1. OCR Agent: Reads text from an ID card image
 2. Extractor Agent: Extracts specific information (ID Number) from OCR output
-3. Analyzer Agent: Provides final statistics
 
-Flow: Image → OCR → Text Extraction → Statistics
+Flow: Image → OCR → Text Extraction
 """
 
 # ============================================================================
@@ -55,17 +54,6 @@ extractor_agent = Agent(
     debug=True
 )
 
-# Analyzer Agent: Provides statistics
-analyzer_agent = Agent(
-    name="Analyzer Agent",
-    role="Data Analyst",
-    goal="Analyze results and provide clear statistics",
-    instructions="""You are a data analyst who excels at summarizing results
-    and providing clear, concise statistics about the work done.""",
-    model="openai/gpt-4o-mini",
-    debug=True
-)
-
 
 # ============================================================================
 # TASKS SECTION
@@ -91,24 +79,6 @@ extraction_task = Task(
     Look for a field labeled 'ID Number' and return only the number itself.
     If you find it, return just the number. If not found, return 'NOT_FOUND'.""",
     context=[ocr_task]  # This task depends on ocr_task output
-)
-
-# Task 3: Analyze and report statistics
-analysis_task = Task(
-    description="""Analyze the results and provide a summary report.
-    
-    From the context, you have:
-    1. OCR Agent output (full text)
-    2. Extractor Agent output (ID Number)
-    
-    Create a report with:
-    - Total characters read by OCR Agent
-    - ID Number extracted by Extractor Agent
-    
-    Format:
-    OCR Agent read X characters
-    Extractor Agent found ID Number: Y""",
-    context=[ocr_task, extraction_task]  # Depends on both previous tasks
 )
 
 
@@ -149,20 +119,12 @@ def main():
     extraction_result = extractor_agent.do(extraction_task)
     print(f"\n🔍 Extracted ID Number: {extraction_result}")
     
-    # Execute Task 3: Analysis
-    print("\n" + "=" * 70)
-    print("STEP 3: ANALYSIS - Final Statistics")
-    print("=" * 70)
-    analysis_result = analyzer_agent.do(analysis_task)
-    print(f"\n📈 Final Report:")
-    print(analysis_result)
-    
-    # Summary
+    # Final Summary
     print("\n" + "=" * 70)
     print("WORKFLOW COMPLETE")
     print("=" * 70)
     print(f"\n✅ OCR Agent read {len(str(ocr_result))} characters")
-    print(f"✅ Extractor Agent found: {extraction_result}")
+    print(f"✅ Extractor Agent extracted: {extraction_result}")
     print()
 
 

@@ -15,15 +15,14 @@
 **Agents:**
 1. **OCR Agent** - Reads text from images
 2. **Extractor Agent** - Extracts specific information (ID Number)
-3. **Analyzer Agent** - Provides statistics and summary
 
 **Implementation:**
 - Created sample ID card image (600x400px PNG) in `src/media/`
 - Wrote test case following TDD approach (`tests/test_code_example_1.py`)
 - Implemented `src/code_example_1/main.py` with clear section separation:
   - Imports section
-  - Agents section (3 agents defined)
-  - Tasks section (3 tasks with context dependencies)
+  - Agents section (2 agents defined)
+  - Tasks section (2 tasks with context dependencies)
   - Execution section (sequential task execution)
 
 **Key Features:**
@@ -39,8 +38,7 @@
 **Results:**
 - OCR Agent: Successfully read 180 characters from ID card image
 - Extractor Agent: Correctly found ID Number (123456789)
-- Analyzer Agent: Generated accurate statistics report
-- Total execution time: ~7 seconds (3 tasks)
+- Total execution time: ~5 seconds (2 tasks)
 - Total cost: ~$0.0023
 
 **Test Results:**
