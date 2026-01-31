@@ -19,11 +19,14 @@ Demonstrates Upsonic agents and team modes: manual calls, sequential, coordinate
 
 ## USAGE
 
-    # Run with uv (project uses uv for dependency management)
+    # Run locally with uv (project uses uv for dependency management)
     $ uv run src/code_example_1/main.py    # Manual agent calls (no team)
     $ uv run src/code_example_2/main.py    # Sequential team
     $ uv run src/code_example_3/main.py    # Coordinate team
     $ uv run src/code_example_4/main.py    # Route team
+    
+    # Or try in Google Colab (no setup required)
+    # See GOOGLE COLAB NOTEBOOKS section below for direct links
 
 ## TESTING
 
@@ -128,14 +131,20 @@ Demonstrates Upsonic agents and team modes: manual calls, sequential, coordinate
 
 ## GOOGLE COLAB NOTEBOOKS
 
-    Each example includes interactive notebook:
+    Each example includes interactive notebook.
+    Click to open directly in Google Colab:
     
-    src/code_example_1/code_example_1_colab.ipynb
-    src/code_example_2/code_example_2_colab.ipynb
-    src/code_example_3/code_example_3_colab.ipynb
-    src/code_example_4/code_example_4_colab.ipynb
+    Example 1 (Manual Agent Calls):
+    https://colab.research.google.com/github/Upsonic/multi_agent_with_upsonic/blob/master/src/code_example_1/code_example_1_colab.ipynb
     
-    Upload to colab.research.google.com
+    Example 2 (Sequential Team):
+    https://colab.research.google.com/github/Upsonic/multi_agent_with_upsonic/blob/master/src/code_example_2/code_example_2_colab.ipynb
+    
+    Example 3 (Coordinate Team):
+    https://colab.research.google.com/github/Upsonic/multi_agent_with_upsonic/blob/master/src/code_example_3/code_example_3_colab.ipynb
+    
+    Example 4 (Route Team):
+    https://colab.research.google.com/github/Upsonic/multi_agent_with_upsonic/blob/master/src/code_example_4/code_example_4_colab.ipynb
 
 ## EXAMPLES IN DETAIL
 
