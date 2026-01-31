@@ -197,7 +197,7 @@ Demonstrates Upsonic agents and team modes: manual calls, sequential, coordinate
 
     MIT License
     
-    Copyright (c) 2026 Onur Atakan Ulusoy
+    Copyright (c) 2024 Upsonic Teknoloji A.Ş.
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
