@@ -43,6 +43,19 @@ Demonstrates **Coordinate Mode** team workflow:
 python src/code_example_3/main.py
 ```
 
+### Example 4: Customer Support System (Route Team)
+**Location:** `src/code_example_4/`
+
+Demonstrates **Route Mode** team workflow:
+- Router Agent selects best expert for each query
+- Billing Expert, Technical Expert, Account Expert
+- Fast routing, no multi-step collaboration
+
+**Run:**
+```bash
+python src/code_example_4/main.py
+```
+
 ---
 
 ## 🎯 How Can I Choose the Right Team Mode?
@@ -170,6 +183,9 @@ python src/code_example_2/main.py
 
 # Example 3: Coordinate Team (Product Launch)
 python src/code_example_3/main.py
+
+# Example 4: Route Team (Customer Support)
+python src/code_example_4/main.py
 ```
 
 ### Run Tests (TDD)
@@ -179,6 +195,7 @@ python src/code_example_3/main.py
 python tests/test_code_example_1.py
 python tests/test_code_example_2.py
 python tests/test_code_example_3.py
+python tests/test_code_example_4.py
 ```
 
 ---
@@ -190,6 +207,7 @@ Each example has an interactive Colab notebook for easy experimentation:
 - **Example 1:** `src/code_example_1/code_example_1_colab.ipynb`
 - **Example 2:** `src/code_example_2/code_example_2_colab.ipynb`
 - **Example 3:** `src/code_example_3/code_example_3_colab.ipynb`
+- **Example 4:** `src/code_example_4/code_example_4_colab.ipynb`
 
 Upload to [Google Colab](https://colab.research.google.com/) and run!
 
