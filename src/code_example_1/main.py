@@ -38,8 +38,7 @@ ocr_agent = Agent(
     instructions="""You are an expert OCR (Optical Character Recognition) specialist.
     Your job is to carefully read images and extract all visible text with high accuracy.
     You pay attention to every detail and return complete text content.""",
-    model="openai/gpt-4o-mini",
-    debug=True
+    model="openai/gpt-4o",
 )
 
 # Extractor Agent: Finds specific information
@@ -50,8 +49,7 @@ extractor_agent = Agent(
     instructions="""You are a data extraction expert. You excel at finding specific
     information in text documents. You are precise and always return exactly
     what is requested, nothing more, nothing less.""",
-    model="openai/gpt-4o-mini",
-    debug=True
+    model="openai/gpt-4o",
 )
 
 
@@ -107,7 +105,7 @@ def main():
     print("\n" + "=" * 70)
     print("STEP 1: OCR - Reading image")
     print("=" * 70)
-    ocr_result = ocr_agent.do(ocr_task)
+    ocr_result = ocr_agent.print_do(ocr_task)
     print(f"\n📄 OCR Output:")
     print(ocr_result)
     print(f"\n📊 Characters read: {len(str(ocr_result))}")
@@ -116,7 +114,7 @@ def main():
     print("\n" + "=" * 70)
     print("STEP 2: EXTRACTION - Finding ID Number")
     print("=" * 70)
-    extraction_result = extractor_agent.do(extraction_task)
+    extraction_result = extractor_agent.print_do(extraction_task)
     print(f"\n🔍 Extracted ID Number: {extraction_result}")
     
     # Final Summary

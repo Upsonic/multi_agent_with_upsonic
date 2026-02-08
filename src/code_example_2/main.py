@@ -43,8 +43,7 @@ researcher = Agent(
     - Focus on accuracy and relevance
     
     Return your research in a structured format with key points and insights.""",
-    model="openai/gpt-4o-mini",
-    debug=True
+    model="openai/gpt-4o"
 )
 
 # Writer Agent: Creates engaging content
@@ -60,8 +59,7 @@ writer = Agent(
     - Aim for 400-600 words
     
     Use the research provided in context to create a comprehensive blog post.""",
-    model="openai/gpt-4o-mini",
-    debug=True
+    model="openai/gpt-4o",
 )
 
 # Editor Agent: Polishes and optimizes content
@@ -78,8 +76,7 @@ editor = Agent(
     - Ensure the content is publication-ready
     
     Return the final, polished blog post in markdown format.""",
-    model="openai/gpt-4o-mini",
-    debug=True
+    model="openai/gpt-4o",
 )
 
 
@@ -199,7 +196,7 @@ def main():
     print()
     
     tasks = [research_task, writing_task, editing_task]
-    final_result = team.do(tasks)
+    final_result = team.print_do(tasks)
     
     # ========================================================================
     # FINAL RESULTS

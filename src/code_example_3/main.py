@@ -44,8 +44,7 @@ market_researcher = Agent(
     - Provide data-driven insights for campaign planning
     
     Return comprehensive market analysis with actionable insights.""",
-    model="openai/gpt-4o-mini",
-    debug=True
+    model="openai/gpt-4o",
 )
 
 # Content Creator: Develops product messaging and content
@@ -60,8 +59,7 @@ content_creator = Agent(
     - Ensure messaging is consistent and impactful
     
     Return structured content strategy with messaging framework.""",
-    model="openai/gpt-4o-mini",
-    debug=True
+    model="openai/gpt-4o",
 )
 
 # Social Media Strategist: Plans social media campaign
@@ -76,8 +74,7 @@ social_media_strategist = Agent(
     - Plan influencer and community strategies
     
     Return actionable social media campaign plan.""",
-    model="openai/gpt-4o-mini",
-    debug=True
+    model="openai/gpt-4o"
 )
 
 
@@ -89,7 +86,7 @@ social_media_strategist = Agent(
 team = Team(
     agents=[market_researcher, content_creator, social_media_strategist],
     mode="coordinate",  # Leader agent coordinates and delegates
-    model="openai/gpt-4o-mini"  # Required: Model for leader (Campaign Manager)
+    model="openai/gpt-4o"  # Required: Model for leader (Campaign Manager)
 )
 
 
@@ -210,7 +207,7 @@ def main():
     print("=" * 70)
     print()
     
-    final_result = team.do(campaign_tasks)
+    final_result = team.print_do(campaign_tasks)
     
     # ========================================================================
     # FINAL RESULTS
